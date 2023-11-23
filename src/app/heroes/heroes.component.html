@@ -1,0 +1,46 @@
+<div class='container' fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1em">
+  <h1>My Heroes</h1>
+  <!-- TextField añadir heroes -->
+  <div>
+    <mat-form-field>
+      <mat-label>Add Hero</mat-label>
+      <input matInput placeholder="Hero Name" #heroName>
+    </mat-form-field>
+    <a mat-flat-button type="button" (click)="add(heroName.value); heroName.value=''" color="primary">Add</a>
+  </div>
+</div>
+
+<!-- Tabla con los datos de los heroes -->
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef> Delete </th>
+    <td mat-cell *matCellDef="let element">
+      <a mat-mini-fab (click)="delete(element)" color="primary">
+        <mat-icon>delete</mat-icon>
+      </a>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="details">
+    <th mat-header-cell *matHeaderCellDef> Datails </th>
+    <td mat-cell *matCellDef="let element">
+      <a mat-mini-fab routerLink="/detail/{{element.id}}" color="primary">
+        <mat-icon>remove_red_eye</mat-icon>
+      </a>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+  </tr>
+</table>

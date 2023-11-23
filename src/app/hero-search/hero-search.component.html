@@ -1,0 +1,16 @@
+<!-- TextField para buscar -->
+<div id="search-component">
+  <mat-form-field appereance="fill">
+    <mat-label>Search hero</mat-label>
+    <input matInput type="search" #searchBox id="search-box" (input)="search(searchBox.value)" />
+  </mat-form-field>
+
+<!-- Resutados con heroes en botones -->
+  <ul class="search-result">
+    <div *ngFor="let hero of heroes$ | async">
+      <a mat-raised-button color="primary" routerLink="/detail/{{hero.id}}">
+        {{hero.name}}
+      </a>
+    </div>
+  </ul>
+</div>

@@ -1,0 +1,14 @@
+<!-- Header y barra de busqueda  -->
+<div class='container' fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1em">
+  <h1>Top Heroes</h1>
+  <app-hero-search></app-hero-search>
+</div>
+
+<!-- Top Heroes como material buttons en una grid -->
+<div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="1em">
+  <mat-grid-list class=centerContent cols="4" rowHeight="1:1">
+    <a mat-raised-button color="primary" *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}">
+      {{hero.name}}
+    </a>
+  </mat-grid-list>
+</div>

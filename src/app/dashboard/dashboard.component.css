@@ -1,0 +1,14 @@
+.mat-raised-button{
+    margin: 2em;
+}
+
+.centerContent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mat-grid-tile .mat-figure {
+    justify-content: flex-start !important ;
+    align-items: flex-start !important;
+ }

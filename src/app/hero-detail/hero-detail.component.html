@@ -1,0 +1,12 @@
+
+<!-- Card con la infocacion del Hero -->
+<mat-card *ngIf="hero">
+    <mat-card-title>{{hero.name | uppercase}}</mat-card-title>
+    <mat-card-content><b>id:</b>{{hero.id}}</mat-card-content>
+
+    <!-- TextField para editar nombre + boton guardar -->
+    <mat-form-field appereance="fill">
+        <input matInput id="hero-name" [(ngModel)]="hero.name" placeholder="Name">
+    </mat-form-field>
+    <button mat-flat-button color="primary" type="button" (click)="save()">Save</button>
+</mat-card>
