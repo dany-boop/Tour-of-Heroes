@@ -8,5 +8,16 @@
     <mat-form-field appereance="fill">
         <input matInput id="hero-name" [(ngModel)]="hero.name" placeholder="Name">
     </mat-form-field>
+
+    <mat-form-field appereance="fill">
+      <input matInput id="hero-alterEgo" [(ngModel)]="hero.alterEgo" placeholder="Alter Ego">
+    </mat-form-field>
+
+    <mat-form-field appereance="fill">
+      <mat-label>Power</mat-label>
+      <mat-select [(ngModel)]="hero.power" placeholder="Select Power">
+          <mat-option *ngFor="let pow of powers" [value]="pow">{{pow}}</mat-option>
+      </mat-select>
+  </mat-form-field>
     <button mat-flat-button color="primary" type="button" (click)="save()">Save</button>
 </mat-card>

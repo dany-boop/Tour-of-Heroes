@@ -1,16 +1,36 @@
 <div class='container' fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1em">
   <h1>My Heroes</h1>
   <!-- TextField añadir heroes -->
-  <div>
+  <!-- <div>
     <mat-form-field>
       <mat-label>Add Hero</mat-label>
       <input matInput placeholder="Hero Name" #heroName>
     </mat-form-field>
     <a mat-flat-button type="button" (click)="add(heroName.value); heroName.value=''" color="primary">Add</a>
   </div>
+</div> -->
+<div>
+  <mat-form-field>
+    <mat-label>Hero Name</mat-label>
+    <input matInput placeholder="Hero Name" #heroName>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Alter Ego</mat-label>
+    <input matInput placeholder="Alter Ego" #alterEgo>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Power</mat-label>
+    <mat-select placeholder="Select Power" #power>
+      <mat-option *ngFor="let pow of powers" [value]="pow">{{ pow }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <a mat-flat-button type="button" (click)="add(heroName.value, alterEgo.value, power.value); heroName.value=''; alterEgo.value=''; power.value=''" color="primary">Add</a>
 </div>
 
-<!-- Tabla con los datos de los heroes -->
+<!-- heroes table list -->
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef> Id </th>
@@ -20,6 +40,14 @@
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> Name </th>
     <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+  <ng-container matColumnDef="power">
+    <th mat-header-cell *matHeaderCellDef> Power </th>
+    <td mat-cell *matCellDef="let element"> {{element.power}} </td>
+  </ng-container>
+  <ng-container matColumnDef="alterEgo">
+    <th mat-header-cell *matHeaderCellDef> Alter Ego </th>
+    <td mat-cell *matCellDef="let element"> {{element.alterEgo}} </td>
   </ng-container>
 
   <ng-container matColumnDef="delete">

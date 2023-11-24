@@ -18,9 +18,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
+import { HeroFormComponent } from './hero-form/hero-form.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { MatTableModule } from '@angular/material/table';
     HeroDetailComponent,
     DashboardComponent,
     HeroSearchComponent,
+    HeroFormComponent,
   ],
 
   imports: [
@@ -42,6 +45,7 @@ import { MatTableModule } from '@angular/material/table';
     BrowserAnimationsModule,
     MatButtonModule,
     MatToolbarModule,
+    MatSelectModule,
     MatGridListModule,
     MatSnackBarModule,
     FlexLayoutModule,
