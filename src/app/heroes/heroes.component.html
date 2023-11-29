@@ -1,14 +1,5 @@
-<div class='container' fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1em">
+<div [@fadeIn] class='container' fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1em">
   <h1>My Heroes</h1>
-  <!-- TextField añadir heroes -->
-  <!-- <div>
-    <mat-form-field>
-      <mat-label>Add Hero</mat-label>
-      <input matInput placeholder="Hero Name" #heroName>
-    </mat-form-field>
-    <a mat-flat-button type="button" (click)="add(heroName.value); heroName.value=''" color="primary">Add</a>
-  </div>
-</div> -->
 <div>
   <mat-form-field>
     <mat-label>Hero Name</mat-label>
@@ -19,6 +10,10 @@
     <mat-label>Alter Ego</mat-label>
     <input matInput placeholder="Alter Ego" #alterEgo>
   </mat-form-field>
+  <mat-form-field>
+    <mat-label>Keterangan</mat-label>
+    <input matInput placeholder="Keterangan" #keterangan>
+  </mat-form-field>
 
   <mat-form-field>
     <mat-label>Power</mat-label>
@@ -27,7 +22,7 @@
     </mat-select>
   </mat-form-field>
 
-  <a mat-flat-button type="button" (click)="add(heroName.value, alterEgo.value, power.value); heroName.value=''; alterEgo.value=''; power.value=''" color="primary">Add</a>
+  <a mat-stroked-button type="button" (click)="add(heroName.value, alterEgo.value,keterangan.value, power.value); heroName.value=''; alterEgo.value=''; keterangan.value=''; power.value=''" color="primary">Add</a>
 </div>
 
 <!-- heroes table list -->
@@ -49,6 +44,10 @@
     <th mat-header-cell *matHeaderCellDef> Alter Ego </th>
     <td mat-cell *matCellDef="let element"> {{element.alterEgo}} </td>
   </ng-container>
+  <ng-container matColumnDef="keterangan">
+    <th mat-header-cell *matHeaderCellDef> Keterangan </th>
+    <td mat-cell *matCellDef="let element"> {{element.keterangan}} </td>
+  </ng-container>
 
   <ng-container matColumnDef="delete">
     <th mat-header-cell *matHeaderCellDef> Delete </th>
@@ -68,7 +67,9 @@
     </td>
   </ng-container>
 
+  <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"[@fadeIn]></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [@fadeIn]="getDelay(row)"></tr> -->
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;">
-  </tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [@fadeIn]="getDelay(row)"></tr>
+    <!-- <tr *ngFor="let row of dataSource.data; let i = index" mat-row [@fadeIn]></tr> -->
 </table>

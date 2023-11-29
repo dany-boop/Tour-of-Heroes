@@ -7,6 +7,7 @@ export class Hero {
     public id: number,
     public name: string,
     public power: string,
+    public keterangan: string,
     public alterEgo?: string
   ) {}
 }

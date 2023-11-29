@@ -19,6 +19,11 @@
         <input type="text" class="form-control" id="alterEgo"
                [(ngModel)]="model.alterEgo" name="alterEgo">
       </div>
+      <div class="form-group">
+        <label for="keterangan">Keterangan</label>
+        <input type="text" class="form-control" id="keterangan"
+               [(ngModel)]="model.keterangan" name="keterangan">
+      </div>
 
       <div class="form-group">
         <label for="power">Hero Power</label>
@@ -47,6 +52,10 @@
     <div class="row">
       <div class="col-xs-3">Alter Ego</div>
       <div class="col-xs-9">{{ model.alterEgo }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Keterangan</div>
+      <div class="col-xs-9">{{ model.keterangan }}</div>
     </div>
     <div class="row">
       <div class="col-xs-3">Power</div>

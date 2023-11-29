@@ -1,0 +1,12 @@
+table.mat-table {
+    width: 100%;
+  }
+  
+  .mat-flat-button {
+    margin: 2em;
+  }
+  
+   .mat-header-row {
+    background-color: #3498db;
+    color: white;
+  }

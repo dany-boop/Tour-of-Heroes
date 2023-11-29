@@ -23,6 +23,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { HeroFormComponent } from './hero-form/hero-form.component';
+import { ItemComponent } from './item/item.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +33,13 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
     DashboardComponent,
     HeroSearchComponent,
     HeroFormComponent,
+    ItemComponent,
   ],
 
   imports: [
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
